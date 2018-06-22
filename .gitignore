@@ -102,3 +102,15 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# Project
+/{{ project_name }}/local_settings.py
+/{{ project_name }}/public/static
+/{{ project_name }}/public/media
+
+# Project database
+*.db
+
+# Idea
+idea/
+.idea/
