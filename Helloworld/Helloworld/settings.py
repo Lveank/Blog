@@ -25,7 +25,7 @@ SECRET_KEY = 't+lslbo-p!7i#+0l@h&s#-i_m4qi=w%*yq=i9(q-r=uo_@7i*&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = ["127.0.0.1:8000"]  
+# ALLOWED_HOSTS = ["127.0.0.1:8000"]
 ALLOWED_HOSTS = [""]  # 注意：部署到生产环境时，要把主域名写在这里，才能通过域名访问到本站
 
 
