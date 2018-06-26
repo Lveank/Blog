@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.blog_title, name='blog_title'),
-    url(r'^$', views.blog_title, name='blog'),
+    # url(r'^$', views.blog_title, name='blog'),
     url(r'(?P<article_id>\d)/$', views.blog_article, name='blog_detail'),
 ]
