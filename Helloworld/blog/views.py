@@ -2,6 +2,13 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from .models import BlogArticles
+from django.http import HttpResponse
+from django.template import RequestContext, loader
+
+
+# index视图（测试用）
+# def index(request):
+#     return HttpResponse("Hello, world. You're at the blog index.")
 
 
 def blog_title(request):

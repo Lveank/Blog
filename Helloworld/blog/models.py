@@ -1,9 +1,11 @@
 from django.db import models
 
 # Create your models here.
-from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
+
+# from django.core.urlresolvers import reverse
+
 
 class BlogArticles(models.Model):
     title = models.CharField(max_length=300)
@@ -15,7 +17,7 @@ class BlogArticles(models.Model):
 
     class Meta:
         # ordering规定了BlogArticle实例对象的显示顺序
-        ordering = ("-publish",)
+        ordering = ("-publish",)  # 按publish的值倒序显示
 
     def __str__(self):
         return self.title

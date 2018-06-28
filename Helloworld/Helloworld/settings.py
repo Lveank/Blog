@@ -54,6 +54,7 @@ ROOT_URLCONF = 'Helloworld.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # 'DIRS': [],  # 默认为空
         'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': False,  # 设为False，不再允许Django按照默认方式寻找模板文件
         'OPTIONS': {

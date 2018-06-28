@@ -1,5 +1,5 @@
 {#不加下面的语句static会报错#}
-{% load static %}
+{% load staticfiles %}
 
 <!DOCTYPE html>
 <html lang="zh-cmn-Hans">
@@ -12,7 +12,6 @@
 </head>
 
 <body>
-    {% include 'header.html' %}
     <div class="container">
         {% block content %}
         {% endblock %}
