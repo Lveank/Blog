@@ -4,7 +4,7 @@
 
         <!-- Logo -->
         <div class="navbar-header">
-            <a class="navbar-brand" herf="http://www.baidu.com/">
+            <a class="navbar-brand" href="http://www.baidu.com/">
                 <img src="{% static '/images/logo.png' %}" width="100px">
             </a>
         </div>
@@ -12,17 +12,17 @@
         <!-- 导航栏主体部分 -->
         <div>
             <!-- BLOG按钮-->
-            <ul class="navbar-nav" role="navigation">
+            <ul class="nav navbar-nav" role="navigation">
                 <li>
                     <a href="{% url 'blog:blog_title' %}">BLOG</a>
                 </li>
             </ul>
 
             <!-- LOGIN・LOGOUT按钮 -->
-            <ul class="navbar-nav navbar-right" style="margin-right: 10px">
+            <ul class="nav navbar-nav navbar-right" style="margin-right: 10px">
                 {% if user.is_authenticated %}
                     <li><a href="#">{{ user.username }}</a></li>
-                    <li><a herf="#">LOGOUT</a></li>
+                    <li><a href="{% url 'account:user_logout' %}">LOGOUT</a></li>
                 {% else %}
                     <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
                 {% endif %}
@@ -30,5 +30,3 @@
         </div>
     </nav>
 </div>
-<script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/bootstrap.js' %}"></script>
