@@ -8,7 +8,11 @@ from django.template import RequestContext, loader
 
 # index视图（测试用）
 def index(request):
-    return HttpResponse("Hello, world. You're at the blog index.")
+    # return HttpResponse("Hello, world. You're at the blog index.")  # 返回提示
+
+    # 如果想在主页显示文章，需要如下修改（参照下面的blog_title视图）
+    blogs = BlogArticles.objects.all()
+    return render(request, "index.html", {"blogs": blogs})
 
 
 def blog_title(request):

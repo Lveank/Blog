@@ -18,7 +18,7 @@ from django.contrib import admin
 from blog.views import blog_title, blog_article, index
 
 urlpatterns = [
-    url(r'^$', index),  # 这是为了测试用的index，视图写在blog里
+    url(r'^$', index, name='index'),  # 这是为了测试用的index，视图写在blog里。注意没有name=some-url-name写模板时会匹配不到
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls', namespace='blog', app_name='blog')),
     url(r'^account/', include('account.urls', namespace='account', app_name='account')),
