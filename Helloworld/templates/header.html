@@ -1,19 +1,31 @@
 {% load staticfiles %}
 <div class="container">
     <nav class="navbar navbar-default" role="navigation">
+
+        <!-- Logo -->
         <div class="navbar-header">
             <a class="navbar-brand" herf="http://www.baidu.com/">
-                <img src="{% static '/images/logo.png'%}" width="100px">
+                <img src="{% static '/images/logo.png' %}" width="100px">
             </a>
         </div>
+
+        <!-- 导航栏主体部分 -->
         <div>
+            <!-- BLOG按钮-->
             <ul class="navbar-nav" role="navigation">
                 <li>
                     <a href="{% url 'blog:blog_title' %}">BLOG</a>
                 </li>
             </ul>
-            <ul class="navbar-nav navbar-right" role="navigation">
-                <li><a href="{% url 'account:user_login' %}">Login</a> </li>
+
+            <!-- LOGIN・LOGOUT按钮 -->
+            <ul class="navbar-nav navbar-right" style="margin-right: 10px">
+                {% if user.is_authenticated %}
+                    <li><a href="#">{{ user.username }}</a></li>
+                    <li><a herf="#">LOGOUT</a></li>
+                {% else %}
+                    <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+                {% endif %}
             </ul>
         </div>
     </nav>
