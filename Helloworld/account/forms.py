@@ -1,9 +1,8 @@
 # 此文件专门存放各种与表单有关的类
 
 from django import forms
-
-# 引入Django默认的用户模型User类
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User  # 引入Django默认的用户模型User类
+from .models import UserProfile
 
 
 class LoginForm(forms.Form):
@@ -25,3 +24,9 @@ class RegistrationForm(forms.ModelForm):
         if cd['password'] != cd['password2']:
             raise forms.ValidationError("password do not match")
         return cd['password2']
+
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ("phone", "birth")
