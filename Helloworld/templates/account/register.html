@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}register user{% endblock %}
+
+{% block content %}
+    <div class="row text-center vertical-middle-sm">
+        <h1>Registration</h1>
+
+        <p>
+            If you are a user, please <strong><a href="{% url 'account:user_login' %}">login </a></strong>or register.
+        </p>
+
+        <form class="form-horizontal" action="." method="post">
+
+            {% csrf_token %}
+
+            <!-- 用户名 -->
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}" class="col-md-5 control-label">Username</label>
+                <div class="col-md-6 text-left">{{ form.username }}</div>
+            </div>
+
+            <!-- 邮箱 -->
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}" class="col-md-5 control-label">Email</label>
+                <div class="col-md-6 text-left">{{ form.email }}</div>
+            </div>
+
+            <!-- 密码 -->
+            <div class="form-group">
+                <label for="{{ form.password.id_for_label }}" class="col-md-5 control-label">Password</label>
+                <div class="col-md-6 text-left">{{ form.password }}</div>
+            </div>
+
+            <!-- 验证密码 -->
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}" class="col-md-5 control-label">Confirm Password</label>
+                <div class="col-md-6 text-left">{{ form.password2 }}</div>
+            </div>
+
+            <!-- 提交按钮 -->
+            <input type="submit" class="btn btn-primary btn-lg" value="REGISTER">
+        </form>
+    </div>
+{% endblock %}
