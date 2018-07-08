@@ -121,3 +121,12 @@ STATICFILES_DIRS = (
 )
 
 LOGIN_REDIRECT_URL = '/blog/'
+
+
+# 邮件发送配置
+EMAIL_HOST = ''
+EMAIL_HOST_USER = "email@qq.com"
+EMAIL_HOST_PASSWORD = "password"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "email@qq.com"
