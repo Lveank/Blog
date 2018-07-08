@@ -16,4 +16,7 @@ urlpatterns = [
     # url(r'^logout/$', auth_views.logout, name='user_logout'),  # 默认使用./templates/registration/logged_out.html模板
     url(r'^logout/$', auth_views.logout, {'template_name': 'account/logout.html'}, name='user_logout'),
     url(r'^register/$', views.register, name='user_register'),
+    url(r'^password-change/$', auth_views.password_change, {'post_change_redirect': '/account/password-change-done'},
+        name='password_change'),
+    url(r'^password-change-done/$', auth_views.password_change_done, name='password_change_done'),
 ]
