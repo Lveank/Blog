@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog',
     'account',
+    'password_reset',  # 第三方应用重置密码
 ]
 
 MIDDLEWARE = [
