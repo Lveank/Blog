@@ -42,4 +42,5 @@ urlpatterns = [
 
     # ----------个人信息页面----------
     url(r'^my-information/$', views.myself, name='my_information'),
+    url(r'^edit-my-information/$', views.myself_edit, name='edit_my_information'),
 ]
