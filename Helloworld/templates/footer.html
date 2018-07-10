@@ -1,84 +1,84 @@
 {% load staticfiles %}
 
-{#<div class="container">#}
-{#    <p class="text-center">copy right www.itdiffer.com</p>#}
-{#</div>#}
+<div class="container">
+    <p class="text-center">copy right www.itdiffer.com</p>
+</div>
 
-<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>
-<link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet"/>
-
-<style>
-    #footer {
-        background: #333;
-        color: #eee;
-        font-size: 11px;
-        padding: 20px;
-    }
-
-    ul.unstyled {
-        list-style: none;
-        padding: 0;
-    }
-
-    #footer h6 {
-        color: white;
-    }
-</style>
-
-
-<nav class="navbar navbar-default navbar-fixed-bottom" id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-2">
-                <h6>Copyright &copy;Hello world</h6>
-            </div>
-
-            <div class="col-sm-4">
-                <h6>关于我们</h6>
-                <p>
-                    个人博客测试专用。
-                </p>
-            </div>
-
-            <div class="col-sm-2">
-                <h6>Follow us</h6>
-                <ul class="unstyled">
-                    <li><a href="">微博</a></li>
-                    <li><a href="">QQ</a></li>
-                    <li><a href="">Github</a></li>
-                </ul>
-            </div>
-
-            <div class="col-sm-2">
-                <h6>本网站由<span class="glyphicon glyphicon-heart"></span>Lveank制作</h6>
-            </div>
-        </div>
-    </div>
-</nav>
-
-
-<!-- 引入JavaScript文件 -->
-<script src="{% static 'js/jquery.js' %}"></script>
-<script src="{% static 'js/bootstrap.js' %}"></script>
-
-<!--bootatrap页脚处理固定于底部不遮挡内容-->
-<!--https://blog.csdn.net/weixin_38391672/article/details/80918061-->
-<script type="javascript">
-    $(document).ready(function () {
-        autoFooterHeight();
-    });
-
-    // 解决底部自动导航的问题
-    function autoFooterHeight() {
-        // 获取内容的高度
-        var bodyHeight = $("body").height();
-        // 获取底部导航的高度
-        var navHeight = $(".navbar").height();
-        // 获取显示屏的高度
-        var iHeight = document.documentElement.clientHeight || document.body.clientHeight;
-        // 如果内容的高度大于（窗口的高度 - 导航的高度）,移除属性样式
-        if (bodyHeight > (iHeight - navHeight)) {
-            $("#footer").removeClass("navbar-fixed-bottom");
-        }
-    }
-</script>
+{#<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet"/>#}
+{#<link href="{% static 'css/bootstrap-theme.min.css' %}" rel="stylesheet"/>#}
+{##}
+{#<style>#}
+{#    #footer {#}
+{#        background: #333;#}
+{#        color: #eee;#}
+{#        font-size: 11px;#}
+{#        padding: 20px;#}
+{#    }#}
+{##}
+{#    ul.unstyled {#}
+{#        list-style: none;#}
+{#        padding: 0;#}
+{#    }#}
+{##}
+{#    #footer h6 {#}
+{#        color: white;#}
+{#    }#}
+{#</style>#}
+{##}
+{##}
+{#<nav class="navbar navbar-default navbar-fixed-bottom" id="footer">#}
+{#    <div class="container">#}
+{#        <div class="row">#}
+{#            <div class="col-sm-2">#}
+{#                <h6>Copyright &copy;Hello world</h6>#}
+{#            </div>#}
+{##}
+{#            <div class="col-sm-4">#}
+{#                <h6>关于我们</h6>#}
+{#                <p>#}
+{#                    个人博客测试专用。#}
+{#                </p>#}
+{#            </div>#}
+{##}
+{#            <div class="col-sm-2">#}
+{#                <h6>Follow us</h6>#}
+{#                <ul class="unstyled">#}
+{#                    <li><a href="">微博</a></li>#}
+{#                    <li><a href="">QQ</a></li>#}
+{#                    <li><a href="">Github</a></li>#}
+{#                </ul>#}
+{#            </div>#}
+{##}
+{#            <div class="col-sm-2">#}
+{#                <h6>本网站由<span class="glyphicon glyphicon-heart"></span>Lveank制作</h6>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</nav>#}
+{##}
+{##}
+{#<!-- 引入JavaScript文件 -->#}
+{#<script src="{% static 'js/jquery.js' %}"></script>#}
+{#<script src="{% static 'js/bootstrap.js' %}"></script>#}
+{##}
+{#<!--bootatrap页脚处理固定于底部不遮挡内容-->#}
+{#<!--https://blog.csdn.net/weixin_38391672/article/details/80918061-->#}
+{#<script type="javascript">#}
+{#    $(document).ready(function () {#}
+{#        autoFooterHeight();#}
+{#    });#}
+{##}
+{#    // 解决底部自动导航的问题#}
+{#    function autoFooterHeight() {#}
+{#        // 获取内容的高度#}
+{#        var bodyHeight = $("body").height();#}
+{#        // 获取底部导航的高度#}
+{#        var navHeight = $(".navbar").height();#}
+{#        // 获取显示屏的高度#}
+{#        var iHeight = document.documentElement.clientHeight || document.body.clientHeight;#}
+{#        // 如果内容的高度大于（窗口的高度 - 导航的高度）,移除属性样式#}
+{#        if (bodyHeight > (iHeight - navHeight)) {#}
+{#            $("#footer").removeClass("navbar-fixed-bottom");#}
+{#        }#}
+{#    }#}
+{#</script>#}
