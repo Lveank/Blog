@@ -12,9 +12,16 @@
         <!-- 导航栏主体部分 -->
         <div>
             <!-- BLOG按钮-->
-            <ul class="nav navbar-nav" role="navigation">
+            <ul class="nav navbar-nav" role="tablist">
                 <li>
-                    <a href="{% url 'blog:blog_title' %}">BLOG</a>
+                    <a href="{% url 'blog:blog_title' %}">Blog</a>
+                </li>
+            </ul>
+
+            <!-- Article按钮-->
+            <ul class="nav navbar-nav" role="tablist">
+                <li>
+                    <a href="{% url 'article:article_column' %}">Article</a>
                 </li>
             </ul>
 

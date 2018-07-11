@@ -11,14 +11,19 @@
 
         <!-- 导航栏主体部分 -->
         <div>
+            <!-- 从左起的无序列表，tablist -->
             <ul class="nav navbar-nav" role="tablist">
                 <li>
                     <a href="{% url 'article:article_column' %}">文章管理</a>
                 </li>
             </ul>
 
+            <!-- 从右起的无序列表 -->
             <ul class="nav navbar-nav navbar-right" style="margin-right:10px">
-                <li><a href="{% url 'blog:blog_title' %}">网站首页</a></li>
+                <!-- 回到博客显示的位置 -->
+                <li>
+                    <a href="{% url 'blog:blog_title' %}">网站首页</a>
+                </li>
 
                 <!-- 显示用户名（下拉菜单） -->
                 <li>
@@ -34,7 +39,10 @@
                     </div>
                 </li>
 
-                <li><a href="{% url 'account:user_logout' %}">Logout</a></li>
+                <!-- 登出按钮 -->
+                <li>
+                    <a href="{% url 'account:user_logout' %}">Logout</a>
+                </li>
             </ul>
         </div>
     </nav>
