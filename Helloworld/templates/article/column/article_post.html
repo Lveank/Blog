@@ -83,7 +83,8 @@
                 success: function (e) {
                     if (e == "1") {
                         layer.msg("successful");
-{#                        location.href = "{% url 'article:article_list' %}";#}
+                        // 加入定位实现发布文章后跳转的功能
+                        location.href = "{% url 'article:article_list' %}";
                     } else if (e == "2") {
                         layer.msg("sorry.");
                     } else {
