@@ -21,7 +21,7 @@
             <!-- Article按钮-->
             <ul class="nav navbar-nav" role="tablist">
                 <li>
-                    <a href="{% url 'article:article_column' %}">Article</a>
+                    <a href="{% url 'article:article_titles' %}">Article</a>
                 </li>
             </ul>
 
@@ -42,9 +42,11 @@
                         </div>
                     </li>
                     <!-- 退出登录按钮 -->
-                    <li><a href="{% url 'account:user_logout' %}">LOGOUT</a></li>
+                    <li><a href="{% url 'account:user_logout' %}">Logout</a></li>
                 {% else %}
-                    <li><a href="{% url 'account:user_login' %}">LOGIN</a></li>
+                    <!-- 如果未登录，显示登录或注册按钮 -->
+                    <li><a href="{% url 'account:user_login' %}">Login</a></li>
+                    <li><a href="{% url 'account:user_register' %}">Register</a></li>
                 {% endif %}
             </ul>
         </div>

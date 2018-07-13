@@ -7,6 +7,7 @@ from .forms import LoginForm, RegistrationForm, UserProfileForm, UserInfoForm, U
 from django.contrib.auth.decorators import login_required  # 需要Django自带的装饰器判断是否登录
 from .models import UserProfile, UserInfo
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse  # 重定向用
 
 
 def user_login(request):
@@ -43,8 +44,9 @@ def register(request):
             new_profile.save()
             # 保存用户注册信息后，在account_userinfo数据库表中写入该用户的id信息
             UserInfo.objects.create(user=new_user)
-            return HttpResponse("Registered successfully")
+            return HttpResponseRedirect(reverse("account:user_login"))
         else:
+            # return HttpResponseRedirect(reverse("account:register"))
             return HttpResponse("Sorry, you can't register.")
     else:
         user_form = RegistrationForm()

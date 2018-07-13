@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from blog.views import blog_title, blog_article, index
+from django.views.generic import TemplateView
 
 urlpatterns = [
     url(r'^$', index, name='index'),  # 这是为了测试用的index，视图写在blog里。注意没有name=some-url-name写模板时会匹配不到
@@ -24,4 +25,6 @@ urlpatterns = [
     url(r'^account/', include('account.urls', namespace='account', app_name='account')),
     url(r'^pwd_reset/', include('password_reset.urls', namespace='pwd_reset', app_name='pwd_reset')),
     url(r'^article/', include('article.urls', namespace='article', app_name='article')),
+    # 使用通用视图制作homepage（不用自己写视图函数）
+    url(r'^home/', TemplateView.as_view(template_name='home.html')),
 ]
