@@ -2,24 +2,25 @@
 
 {% block title %}blog titles{% endblock %}
 
-
+{% load staticfiles %}
 
 {% block content %}
 
-<div class="row text-center vertical-middle-sm">
-    <h1>{{ article.title }}</h1>
-</div>
+    <div class="row text-center vertical-middle-sm">
+        <h1>{{ article.title }}</h1>
+    </div>
 
-<div class="row text-center vertical-middle-sm">
-    <p>{{ article.author.username }}</p>
-</div>
+    <div class="row text-center vertical-middle-sm">
+        <p>{{ article.author.username }}</p>
+    </div>
 
-<div class="row text-center vertical-middle-sm">
-    <p>{{ publish }}</p>
-</div>
+    <div class="row text-center vertical-middle-sm">
+        <p>{{ publish }}</p>
+    </div>
 
-<div class="row text-center vertical-middle-sm">
-    <p>{{ article.body }}</p>
-</div>
+    <link rel="stylesheet" href="{% static 'editor/css/editormd.preview.css' %}"/>
+    <div style="white-space:pre">
+        {{ article.body }}
+    </div>
 
 {% endblock %}
