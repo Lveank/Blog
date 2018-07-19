@@ -132,3 +132,8 @@ EMAIL_HOST_PASSWORD = "password"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "email@qq.com"
+
+# redis配置
+REDIS_HOST = 'localhost'
+REDIS_PORT = 6379
+REDIS_DB = 0

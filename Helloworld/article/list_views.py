@@ -6,6 +6,10 @@ from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 from django.http import HttpResponse
+import redis
+from django.conf import settings
+
+r = redis.StrictRedis(host=settings.REDIS_HOST, port=settings.REDIS_PORT, db=settings.REDIS_DB)
 
 
 def article_titles(request, username=None):
@@ -40,7 +44,8 @@ def article_titles(request, username=None):
 
 def article_detail(request, id, slug):
     article = get_object_or_404(ArticlePost, id=id, slug=slug)
-    return render(request, "article/list/article_detail.html", {"article": article})
+    total_views = r.incr("article:{}:views".format(article.id))  # 对访问文章的次数进行记录，incr的作用是让当前键值递增
+    return render(request, "article/list/article_detail.html", {"article": article, "total_views": total_views})
 
 
 @csrf_exempt
