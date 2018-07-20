@@ -24,6 +24,9 @@ class ArticlePost(models.Model):
     created = models.DateTimeField(default=timezone.now)
     update = models.DateTimeField(auto_now=True)
 
+    # 点赞
+    users_like = models.ManyToManyField(User, related_name="article_like", blank=True)
+
     class Meta:
         ordering = ('title',)
         index_together = (('id', 'slug'),)
@@ -40,6 +43,3 @@ class ArticlePost(models.Model):
 
     def get_url_path(self):
         return reverse("article:list_article_detail", args=[self.id, self.slug])
-
-    # 点赞
-    users_like = models.ManyToManyField(User, related_name="article_like", blank=True)
